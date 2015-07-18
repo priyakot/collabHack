@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<input type="text" class='form-group' id=username></input>
+<input type="password" class='form-group' id=password></input>
+<button id=submit class='btn btn-primary'onclick=abc()>submit</button>
+
+<script>
+function abc()
+{
+username = $("#username").val();
+password = $("#password").val();
+$.post("jsp/login.jsp",{username:username,password:password})
+	.done(function( data ) {
+alert(data);
+    window.location = "jsp/login.jsp";
+  });
+
+}
+</script>
